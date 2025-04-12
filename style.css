@@ -3,17 +3,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     font-family: "Segoe UI", sans-serif;
     background: linear-gradient(to right top, #fefcea, #f1daff);
     color: #222;
     overflow-x: hidden;
-  }
-  
-  /* Hero Section */
-  .hero {
+}
+
+/* Hero Section */
+.hero {
     position: relative;
     height: 100vh;
     display: flex;
@@ -22,31 +22,31 @@
     padding: 2rem;
     text-align: center;
     overflow: hidden;
-  }
-  
-  .hero-content {
+}
+
+.hero-content {
     max-width: 700px;
     z-index: 2;
-  }
-  
-  .hero h1 {
+}
+
+.hero h1 {
     font-size: 3rem;
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 1rem;
-  }
-  
-  .hero h1 span {
+}
+
+.hero h1 span {
     font-size: 3.2rem;
-  }
-  
-  .hero p {
+}
+
+.hero p {
     font-size: 1.2rem;
     color: #444;
     margin-bottom: 2rem;
-  }
-  
-  .hero button {
+}
+
+.hero button {
     padding: 0.9rem 2rem;
     font-size: 1rem;
     font-weight: bold;
@@ -56,14 +56,14 @@
     color: #fff;
     cursor: pointer;
     transition: background 0.3s ease;
-  }
-  
-  .hero button:hover {
+}
+
+.hero button:hover {
     background-color: #ff6a88;
-  }
-  
-  /* Floating Emojis */
-  .floating-emojis {
+}
+
+/* Floating Emojis */
+.floating-emojis {
     position: absolute;
     top: 0;
     left: 0;
@@ -71,133 +71,140 @@
     height: 100%;
     pointer-events: none;
     z-index: 1;
-  }
-  
-  .floating-emojis span {
+}
+
+.floating-emojis span {
     position: absolute;
     font-size: 2rem;
     animation: floatEmoji 10s linear infinite;
     opacity: 0.7;
-  }
-  
-  .floating-emojis span:nth-child(1) {
+}
+
+.floating-emojis span:nth-child(1) {
     top: 10%;
     left: 20%;
     animation-delay: 0s;
-  }
-  .floating-emojis span:nth-child(2) {
+}
+
+.floating-emojis span:nth-child(2) {
     top: 40%;
     left: 70%;
     animation-delay: 2s;
-  }
-  .floating-emojis span:nth-child(3) {
+}
+
+.floating-emojis span:nth-child(3) {
     top: 70%;
     left: 30%;
     animation-delay: 4s;
-  }
-  .floating-emojis span:nth-child(4) {
+}
+
+.floating-emojis span:nth-child(4) {
     top: 80%;
     left: 60%;
     animation-delay: 6s;
-  }
-  .floating-emojis span:nth-child(5) {
+}
+
+.floating-emojis span:nth-child(5) {
     top: 50%;
     left: 15%;
     animation-delay: 8s;
-  }
-  .floating-emojis span:nth-child(6) {
+}
+
+.floating-emojis span:nth-child(6) {
     top: 20%;
     left: 85%;
     animation-delay: 10s;
-  }
-  
-  @keyframes floatEmoji {
-    0% {
-      transform: translateY(0px) scale(1);
-      opacity: 0.5;
-    }
-    50% {
-      transform: translateY(-40px) scale(1.2);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(0px) scale(1);
-      opacity: 0.5;
-    }
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2.2rem;
-    }
-  
-    .hero button {
-      width: 100%;
-    }
-  }
+}
 
-  
-  /* Mood Section */
+@keyframes floatEmoji {
+    0% {
+        transform: translateY(0px) scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translateY(-40px) scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0px) scale(1);
+        opacity: 0.5;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero button {
+        width: 100%;
+    }
+}
+
+
+/* Mood Section */
 .mood-section {
     background: #fdfbfb;
     padding: 4rem 2rem;
     text-align: center;
     position: relative;
-  }
-  
-  .mood-container {
+}
+
+.mood-container {
     max-width: 700px;
     margin: auto;
     background: #fff;
     padding: 3rem 2rem;
     border-radius: 25px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-  }
-  
-  .mood-container h2 {
+}
+
+.mood-container h2 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
     color: #333;
-  }
-  
-  #today-date {
+}
+
+#today-date {
     font-size: 1rem;
     color: #777;
     margin-bottom: 2rem;
-  }
-  
-  .emoji-grid {
+}
+
+.emoji-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
-  }
-  
-  .emoji {
+}
+
+.emoji {
     font-size: 2.5rem;
     cursor: pointer;
     transition: transform 0.2s, background 0.3s;
     padding: 1rem;
     border-radius: 50%;
     background: #f4f4f4;
-  }
-  
-  .emoji:hover {
+}
+
+.emoji:hover {
     transform: scale(1.2);
     background: #ffe1e1;
-  }
-  
-  .emoji.selected {
+}
+
+.emoji.selected {
     background: #ff9a9e;
     color: #fff;
     transform: scale(1.3);
-  }
-  
-  #mood-container button,
-  #logMoodBtn {
+}
+
+#mood-container button,
+#logMoodBtn {
     padding: 0.9rem 2rem;
     font-size: 1rem;
     font-weight: 600;
@@ -207,79 +214,81 @@
     border-radius: 50px;
     cursor: pointer;
     transition: background 0.3s ease;
-  }
-  
-  #logMoodBtn:hover {
+}
+
+#logMoodBtn:hover {
     background: #ff6a88;
-  }
-  
-  /* Toast Message */
-  .toast {
+}
+
+/* Toast Message */
+.toast {
     margin-top: 1.5rem;
     color: green;
     font-weight: 500;
     display: none;
     animation: fade 1.5s ease-in-out;
-  }
-  
-  @keyframes fade {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-  
-  /* Responsive */
-  @media (max-width: 600px) {
-    .emoji-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  
-    .emoji {
-      font-size: 2rem;
-    }
-  }
+}
 
-  
-  /* Calendar Section */
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .emoji-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .emoji {
+        font-size: 2rem;
+    }
+}
+
+
+/* Calendar Section */
 .calendar-section {
     background: #fafafa;
     padding: 4rem 2rem;
     text-align: center;
-  }
-  
-  .calendar-container {
+}
+
+.calendar-container {
     max-width: 800px;
     margin: auto;
     background: #ffffff;
     padding: 2rem;
     border-radius: 20px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-  }
-  
-  .calendar-container h2 {
+}
+
+.calendar-container h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-  }
-  
-  .calendar-header {
+}
+
+.calendar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 1rem 0 2rem;
-  }
-  
-  .calendar-header h3 {
+}
+
+.calendar-header h3 {
     font-size: 1.5rem;
     font-weight: 600;
-  }
-  
-  .calendar-header button {
+}
+
+.calendar-header button {
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
     background: #ff9a9e;
@@ -288,19 +297,19 @@
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.2s;
-  }
-  
-  .calendar-header button:hover {
+}
+
+.calendar-header button:hover {
     background: #ff6a88;
-  }
-  
-  .calendar-grid {
+}
+
+.calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 1rem;
-  }
-  
-  .day {
+}
+
+.day {
     aspect-ratio: 1 / 1;
     border-radius: 10px;
     background: #f4f4f4;
@@ -311,105 +320,105 @@
     font-size: 0.9rem;
     position: relative;
     transition: all 0.2s ease;
-  }
-  
-  .day.today {
+}
+
+.day.today {
     border: 2px solid #ff9a9e;
     font-weight: bold;
-  }
-  
-  .day .emoji {
+}
+
+.day .emoji {
     font-size: 1.4rem;
     margin-top: 0.3rem;
-  }
-  
-  .day:hover {
+}
+
+.day:hover {
     background: #ffeef1;
     transform: scale(1.05);
-  }
-  
-  .note {
+}
+
+.note {
     font-size: 0.9rem;
     margin-top: 1rem;
     color: #888;
-  }
-  
-  @media (max-width: 600px) {
-    .calendar-grid {
-      gap: 0.5rem;
-    }
-  
-    .calendar-header h3 {
-      font-size: 1.2rem;
-    }
-  
-    .day {
-      font-size: 0.75rem;
-    }
-  
-    .day .emoji {
-      font-size: 1rem;
-    }
-  }
+}
 
-  
-  /* Analytics Section */
+@media (max-width: 600px) {
+    .calendar-grid {
+        gap: 0.5rem;
+    }
+
+    .calendar-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .day {
+        font-size: 0.75rem;
+    }
+
+    .day .emoji {
+        font-size: 1rem;
+    }
+}
+
+
+/* Analytics Section */
 .analytics-section {
     background: #fefefe;
     padding: 4rem 2rem;
     text-align: center;
-  }
-  
-  .analytics-container {
+}
+
+.analytics-container {
     max-width: 800px;
     margin: auto;
     background: #ffffff;
     padding: 3rem 2rem;
     border-radius: 20px;
     box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
-  }
-  
-  .analytics-container h2 {
+}
+
+.analytics-container h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
     color: #333;
-  }
-  
-  #chart-container {
+}
+
+#chart-container {
     width: 100%;
     overflow-x: auto;
-  }
-  
-  #moodChart {
-    max-width: 100%;
-  }
+}
 
-  
-  /* Features Section */
+#moodChart {
+    max-width: 100%;
+}
+
+
+/* Features Section */
 .features-section {
     background: linear-gradient(to right, #fdfbfb, #ebedee);
     padding: 5rem 2rem;
     text-align: center;
-  }
-  
-  .features-container {
+}
+
+.features-container {
     max-width: 1100px;
     margin: auto;
-  }
-  
-  .features-container h2 {
+}
+
+.features-container h2 {
     font-size: 2.5rem;
     margin-bottom: 3rem;
     color: #333;
-  }
-  
-  .features-grid {
+}
+
+.features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-  }
-  
-  .feature-card {
+}
+
+.feature-card {
     background: white;
     padding: 2rem;
     border-radius: 20px;
@@ -417,63 +426,63 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
-  }
-  
-  .feature-card:hover {
+}
+
+.feature-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-  }
-  
-  .feature-card .icon {
+}
+
+.feature-card .icon {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #ff9a9e;
     transition: transform 0.3s ease;
-  }
-  
-  .feature-card:hover .icon {
+}
+
+.feature-card:hover .icon {
     transform: scale(1.2);
-  }
-  
-  .feature-card h3 {
+}
+
+.feature-card h3 {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
     color: #222;
-  }
-  
-  .feature-card p {
+}
+
+.feature-card p {
     font-size: 0.95rem;
     color: #555;
     line-height: 1.6;
-  }
+}
 
-  
-  /* Testimonials Section */
+
+/* Testimonials Section */
 .testimonials-section {
     background: linear-gradient(to right, #f9f9f9, #eef1f5);
     padding: 5rem 2rem;
     text-align: center;
-  }
-  
-  .testimonials-container {
+}
+
+.testimonials-container {
     max-width: 900px;
     margin: auto;
     position: relative;
-  }
-  
-  .testimonials-container h2 {
+}
+
+.testimonials-container h2 {
     font-size: 2.5rem;
     margin-bottom: 3rem;
     color: #333;
-  }
-  
-  .testimonial-slider {
+}
+
+.testimonial-slider {
     position: relative;
     overflow: hidden;
     min-height: 260px;
-  }
-  
-  .testimonial {
+}
+
+.testimonial {
     background: rgba(255, 255, 255, 0.9);
     padding: 2rem;
     border-radius: 20px;
@@ -484,51 +493,51 @@
     opacity: 0;
     transform: scale(0.95);
     z-index: 0;
-  }
-  
-  .testimonial.active {
+}
+
+.testimonial.active {
     opacity: 1;
     transform: scale(1);
     z-index: 1;
-  }
-  
-  .testimonial p {
+}
+
+.testimonial p {
     font-size: 1.1rem;
     color: #444;
     margin-bottom: 1.5rem;
     line-height: 1.7;
-  }
-  
-  .user-info {
+}
+
+.user-info {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-  }
-  
-  .user-info img {
+}
+
+.user-info img {
     width: 60px;
     height: 60px;
     border-radius: 50%;
     border: 3px solid #ff9a9e;
-  }
-  
-  .user-info h4 {
+}
+
+.user-info h4 {
     margin: 0;
     font-size: 1rem;
     color: #222;
-  }
-  
-  .user-info span {
+}
+
+.user-info span {
     font-size: 0.85rem;
     color: #777;
-  }
-  
-  .testimonial-nav {
+}
+
+.testimonial-nav {
     margin-top: 2rem;
-  }
-  
-  .testimonial-nav button {
+}
+
+.testimonial-nav button {
     background: #ff9a9e;
     border: none;
     padding: 0.6rem 1.2rem;
@@ -538,83 +547,86 @@
     margin: 0 0.5rem;
     cursor: pointer;
     transition: background 0.3s ease;
-  }
-  
-  .testimonial-nav button:hover {
-    background: #f76c6c;
-  }
-  
-  @media (max-width: 768px) {
-    .testimonial {
-      padding: 1.5rem;
-    }
-  
-    .testimonials-container h2 {
-      font-size: 2rem;
-    }
-  }
+}
 
-  
-  /* Footer Section */
+.testimonial-nav button:hover {
+    background: #f76c6c;
+}
+
+@media (max-width: 768px) {
+    .testimonial {
+        padding: 1.5rem;
+    }
+
+    .testimonials-container h2 {
+        font-size: 2rem;
+    }
+}
+
+
+/* Footer Section */
 .footer-section {
     background: linear-gradient(135deg, #1a1a2e, #16213e);
     color: #eee;
     padding: 4rem 2rem 2rem;
     font-family: 'Segoe UI', sans-serif;
-  }
-  
-  .footer-container {
+}
+
+.footer-container {
     max-width: 1200px;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-  }
-  
-  .footer-column h3, .footer-column h4 {
+}
+
+.footer-column h3,
+.footer-column h4 {
     margin-bottom: 1rem;
     color: #ff9a9e;
-  }
-  
-  .footer-column p, .footer-column li, .footer-bottom p {
+}
+
+.footer-column p,
+.footer-column li,
+.footer-bottom p {
     font-size: 0.95rem;
     line-height: 1.6;
     color: #ccc;
-  }
-  
-  .footer-column ul {
+}
+
+.footer-column ul {
     list-style: none;
     padding: 0;
-  }
-  
-  .footer-column ul li {
+}
+
+.footer-column ul li {
     margin-bottom: 0.5rem;
-  }
-  
-  .footer-column ul li a {
+}
+
+.footer-column ul li a {
     color: #ccc;
     text-decoration: none;
     transition: color 0.3s ease;
-  }
-  
-  .footer-column ul li a:hover {
+}
+
+.footer-column ul li a:hover {
     color: #ff9a9e;
-  }
-  
-  .footer-column form {
+}
+
+.footer-column form {
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
-  }
-  
-  .footer-column input[type="email"] {
+}
+
+.footer-column input[type="email"] {
     padding: 0.7rem;
     border-radius: 8px;
     border: none;
     font-size: 0.95rem;
-  }
-  
-  .footer-column button {
+}
+
+.footer-column button {
     padding: 0.6rem;
     background: #ff9a9e;
     border: none;
@@ -622,34 +634,33 @@
     color: white;
     cursor: pointer;
     transition: background 0.3s ease;
-  }
-  
-  .footer-column button:hover {
+}
+
+.footer-column button:hover {
     background: #f76c6c;
-  }
-  
-  .social-icons {
+}
+
+.social-icons {
     margin-top: 1rem;
-  }
-  
-  .social-icons a {
+}
+
+.social-icons a {
     margin-right: 0.7rem;
     font-size: 1.2rem;
     color: #ccc;
     transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .social-icons a:hover {
+}
+
+.social-icons a:hover {
     color: #ff9a9e;
     transform: scale(1.2);
-  }
-  
-  .footer-bottom {
+}
+
+.footer-bottom {
     text-align: center;
     margin-top: 3rem;
     padding-top: 1.5rem;
     border-top: 1px solid #2c2c3f;
     font-size: 0.9rem;
     color: #aaa;
-  }
-  
+}
