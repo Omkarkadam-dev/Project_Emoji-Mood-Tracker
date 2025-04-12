@@ -351,4 +351,36 @@
       font-size: 1rem;
     }
   }
+
+  
+  /* Analytics Section */
+.analytics-section {
+    background: #fefefe;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .analytics-container {
+    max-width: 800px;
+    margin: auto;
+    background: #ffffff;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+  }
+  
+  .analytics-container h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  #chart-container {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  #moodChart {
+    max-width: 100%;
+  }
   

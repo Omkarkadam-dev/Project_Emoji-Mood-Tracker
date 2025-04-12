@@ -132,3 +132,85 @@ nextMonthBtn.addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", () => {
   renderCalendar(currentDate);
 });
+
+
+// Chart.js - Mood Analytics
+function generateMoodAnalytics() {
+    const moodLog = JSON.parse(localStorage.getItem("moodLog")) || {};
+  
+    const moodCounts = {
+      happy: 0,
+      sad: 0,
+      angry: 0,
+      neutral: 0,
+      love: 0,
+      funny: 0
+    };
+  
+    Object.values(moodLog).forEach((mood) => {
+      if (moodCounts[mood] !== undefined) {
+        moodCounts[mood]++;
+      }
+    });
+  
+    const moodLabels = {
+      happy: "😊 Happy",
+      sad: "😢 Sad",
+      angry: "😡 Angry",
+      neutral: "😐 Neutral",
+      love: "😍 Love",
+      funny: "😂 Funny"
+    };
+  
+    const ctx = document.getElementById("moodChart").getContext("2d");
+  
+    new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: Object.keys(moodCounts).map((m) => moodLabels[m]),
+        datasets: [
+          {
+            label: "Mood Count",
+            data: Object.values(moodCounts),
+            backgroundColor: [
+              "#FF9A9E",
+              "#A18CD1",
+              "#FBC2EB",
+              "#FFDAC1",
+              "#C1FFD7",
+              "#B5EAD7"
+            ],
+            borderRadius: 12,
+            borderWidth: 1
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            backgroundColor: "#333",
+            titleColor: "#fff",
+            bodyColor: "#fff"
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              precision: 0
+            }
+          }
+        }
+      }
+    });
+  }
+  
+  // Trigger when DOM is loaded
+  document.addEventListener("DOMContentLoaded", () => {
+    generateMoodAnalytics();
+  });
+  
