@@ -136,4 +136,112 @@
       width: 100%;
     }
   }
+
+  
+  /* Mood Section */
+.mood-section {
+    background: #fdfbfb;
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+  }
+  
+  .mood-container {
+    max-width: 700px;
+    margin: auto;
+    background: #fff;
+    padding: 3rem 2rem;
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mood-container h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  #today-date {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 2rem;
+  }
+  
+  .emoji-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .emoji {
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+    padding: 1rem;
+    border-radius: 50%;
+    background: #f4f4f4;
+  }
+  
+  .emoji:hover {
+    transform: scale(1.2);
+    background: #ffe1e1;
+  }
+  
+  .emoji.selected {
+    background: #ff9a9e;
+    color: #fff;
+    transform: scale(1.3);
+  }
+  
+  #mood-container button,
+  #logMoodBtn {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background: #ff9a9e;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  #logMoodBtn:hover {
+    background: #ff6a88;
+  }
+  
+  /* Toast Message */
+  .toast {
+    margin-top: 1.5rem;
+    color: green;
+    font-weight: 500;
+    display: none;
+    animation: fade 1.5s ease-in-out;
+  }
+  
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .emoji-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    .emoji {
+      font-size: 2rem;
+    }
+  }
   
