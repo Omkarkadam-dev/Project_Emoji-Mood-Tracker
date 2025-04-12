@@ -235,3 +235,32 @@ featureCards.forEach((card) => {
   card.style.transform = "translateY(40px)";
   observer.observe(card);
 });
+
+
+// Testimonial Slider Logic
+const testimonials = document.querySelectorAll(".testimonial");
+let currentTestimonial = 0;
+
+function showTestimonial(index) {
+  testimonials.forEach((t, i) => {
+    t.classList.remove("active");
+    if (i === index) t.classList.add("active");
+  });
+}
+
+document.querySelector(".prev").addEventListener("click", () => {
+  currentTestimonial =
+    (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+  showTestimonial(currentTestimonial);
+});
+
+document.querySelector(".next").addEventListener("click", () => {
+  currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+  showTestimonial(currentTestimonial);
+});
+
+// Auto switch every 6 seconds
+setInterval(() => {
+  currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+  showTestimonial(currentTestimonial);
+}, 6000);
