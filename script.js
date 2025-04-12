@@ -264,3 +264,11 @@ setInterval(() => {
   currentTestimonial = (currentTestimonial + 1) % testimonials.length;
   showTestimonial(currentTestimonial);
 }, 6000);
+
+
+// Prevent newsletter form from submitting
+document.querySelector('.footer-column form')?.addEventListener('submit', function (e) {
+    e.preventDefault();
+    alert("Subscribed! 🎉 (Just a demo form)");
+  });
+  
