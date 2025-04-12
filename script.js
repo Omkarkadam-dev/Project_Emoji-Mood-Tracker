@@ -52,4 +52,83 @@ document.addEventListener("DOMContentLoaded", () => {
     emojis.forEach((e) => e.classList.remove("selected"));
     selectedMood = null;
   });
+
   
+  // Calendar View Logic
+const calendarGrid = document.getElementById("calendarGrid");
+const monthYearDisplay = document.getElementById("monthYear");
+const prevMonthBtn = document.getElementById("prevMonth");
+const nextMonthBtn = document.getElementById("nextMonth");
+
+let currentDate = new Date();
+
+const emojiMap = {
+  happy: "😊",
+  sad: "😢",
+  angry: "😡",
+  neutral: "😐",
+  love: "😍",
+  funny: "😂"
+};
+
+function renderCalendar(date) {
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const today = new Date();
+
+  // Update Month-Year Header
+  monthYearDisplay.textContent = date.toLocaleString("default", {
+    month: "long",
+    year: "numeric"
+  });
+
+  // Get first day of the month
+  const firstDay = new Date(year, month, 1).getDay();
+  const totalDays = new Date(year, month + 1, 0).getDate();
+
+  // Clear old calendar
+  calendarGrid.innerHTML = "";
+
+  // Fill blank spaces for first day offset
+  for (let i = 0; i < firstDay; i++) {
+    const blank = document.createElement("div");
+    calendarGrid.appendChild(blank);
+  }
+
+  // Fetch moodLog
+  const moodLog = JSON.parse(localStorage.getItem("moodLog")) || {};
+
+  // Fill days with emojis if mood is logged
+  for (let day = 1; day <= totalDays; day++) {
+    const dateKey = new Date(year, month, day).toLocaleDateString();
+    const mood = moodLog[dateKey];
+    const emoji = mood ? emojiMap[mood] : "";
+
+    const dayDiv = document.createElement("div");
+    dayDiv.classList.add("day");
+    if (
+      day === today.getDate() &&
+      month === today.getMonth() &&
+      year === today.getFullYear()
+    ) {
+      dayDiv.classList.add("today");
+    }
+
+    dayDiv.innerHTML = `<div>${day}</div><div class="emoji">${emoji}</div>`;
+    calendarGrid.appendChild(dayDiv);
+  }
+}
+
+prevMonthBtn.addEventListener("click", () => {
+  currentDate.setMonth(currentDate.getMonth() - 1);
+  renderCalendar(currentDate);
+});
+
+nextMonthBtn.addEventListener("click", () => {
+  currentDate.setMonth(currentDate.getMonth() + 1);
+  renderCalendar(currentDate);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderCalendar(currentDate);
+});
